@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "main": "Src/index.js",
   "license": "MIT",
+  "author": "ElFietulais",
   "scripts": {
     "start": "ts-node Src/index.ts",
     "build":"tsc",
