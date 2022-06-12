@@ -1,5 +1,5 @@
 {
-  "name": "bot",
+  "name": "fietubot",
   "version": "1.0.0",
   "main": "Src/index.js",
   "license": "MIT",
