@@ -1,9 +1,12 @@
-import type { Client, Message } from 'discord.js'
+import type { Client, Message, PermissionString} from 'discord.js'
 
 export abstract class Command {
 	constructor (options: {
     data: {
       name: string;
+      description: string;
+      botPermissions?: PermissionString[];
+      userPermissions?: PermissionString[];
     };
     run: (client: Client, message: Message, args: string[]) => void;
   }) {
@@ -13,6 +16,9 @@ export abstract class Command {
 
 	data: {
     name: string;
+    description: string;
+    botPermissions?: PermissionString[];
+    userPermissions?: PermissionString[];
   }
 
 	run: (client: Client, message: Message, args: string[]) => void

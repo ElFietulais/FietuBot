@@ -12,6 +12,9 @@ export default class MessageCreate extends Events {
 
 				if (message.author.bot) { return }
 
+				if(!message.guild) { return }
+
+
 				const args = message.content.slice(client.prefix.length).split(/ +/)
 				if (!args) { return }
 
@@ -20,6 +23,12 @@ export default class MessageCreate extends Events {
 
 				const command = client.commands.get(cmd)
 				if (!command) { return }
+
+				if(command.data.botPermissions && !message.guild?.me?.permissions.has(command.data.botPermissions)) return message.channel.send(` > :x:  I need permission: \`${command.data.botPermissions}\`, to use this command!`)
+				
+				
+				if(command.data.userPermissions && !message.member?.permissions.has(command.data.userPermissions)) return message.channel.send(` > :x:  You need permission: \`${command.data.userPermissions}\`, to use this command!`)
+				
 
 				try {
 					await command.run(client, message, args)

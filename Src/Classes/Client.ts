@@ -1,3 +1,5 @@
+/* eslint-disable  @typescript-eslint/no-explicit-any */
+
 import 'dotenv/config'
 import { Client, Collection } from 'discord.js'
 
@@ -5,7 +7,6 @@ import { CommandHandler } from '../Handlers/Commands'
 import { EventHandler } from '../Handlers/Events'
 
 export class Bot extends Client {
-	// eslint-disable-next-line
 	public override commands: Collection<string, any> = new Collection()
 
 	public override prefix: '!'
@@ -28,7 +29,6 @@ export class Bot extends Client {
 
 declare module 'discord.js' {
   export interface Client {
-    // eslint-disable-next-line
 		readonly commands: Collection<string, any>
     readonly prefix: '!';
   }
