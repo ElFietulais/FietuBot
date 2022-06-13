@@ -1,6 +1,6 @@
 import type { Client } from 'discord.js'
 
-import { Events } from '../../Classes/Event'
+import { Events } from '../../classes/Event'
 
 export default class Ready extends Events {
 	public constructor () {

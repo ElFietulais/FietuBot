@@ -5,7 +5,7 @@
   "license": "MIT",
   "author": "ElFietulais",
   "scripts": {
-    "start": "ts-node Src/index.ts",
+    "start": "ts-node src/index.ts",
     "build":"tsc",
     "lint:fix": "eslint Src/ --fix --ext .ts",
     "lint:err": " eslint Src/ --ext .ts"

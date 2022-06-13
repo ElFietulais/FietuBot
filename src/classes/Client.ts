@@ -3,8 +3,8 @@
 import 'dotenv/config'
 import { Client, Collection } from 'discord.js'
 
-import { CommandHandler } from '../Handlers/Commands'
-import { EventHandler } from '../Handlers/Events'
+import { CommandHandler } from '../handlers/Commands'
+import { EventHandler } from '../handlers/Events'
 
 export class Bot extends Client {
 	public override commands: Collection<string, any> = new Collection()
@@ -13,7 +13,7 @@ export class Bot extends Client {
 
 	public constructor () {
 		super({
-			intents: [513]
+			intents: [515]
 		})
 
 		this.commands = new Collection()

@@ -5,6 +5,7 @@ export abstract class Command {
     data: {
       name: string;
       description: string;
+      aliases?: string[];
       botPermissions?: PermissionString[];
       userPermissions?: PermissionString[];
     };
@@ -17,6 +18,7 @@ export abstract class Command {
 	data: {
     name: string;
     description: string;
+    aliases?: string[];
     botPermissions?: PermissionString[];
     userPermissions?: PermissionString[];
   }

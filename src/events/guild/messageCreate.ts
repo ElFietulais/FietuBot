@@ -1,6 +1,6 @@
 import type { Client, Message } from 'discord.js'
 
-import { Events } from '../../Classes/Event'
+import { Events } from '../../classes/Event'
 
 export default class MessageCreate extends Events {
 	public constructor () {
@@ -21,7 +21,7 @@ export default class MessageCreate extends Events {
 				// eslint-disable-next-line
 				const cmd = args.shift()!.toLowerCase()
 
-				const command = client.commands.get(cmd)
+				const command = client.commands.get(cmd) || client.commands.find((command) => command.data.aliases == cmd)
 				if (!command) { return }
 
 				if(command.data.botPermissions && !message.guild?.me?.permissions.has(command.data.botPermissions)) return message.channel.send(` > :x:  I need permission: \`${command.data.botPermissions}\`, to use this command!`)

@@ -1,5 +1,5 @@
 import type { Client, Message } from 'discord.js'
-import { Command } from '../../Classes/Command'
+import { Command } from '../../classes/Command'
 
 export default class Ping extends Command {
 	public constructor () {
@@ -7,7 +7,7 @@ export default class Ping extends Command {
 			data: {
 				name: 'ping',
 				description: 'Pong!',
-				botPermissions: [ 'SEND_MESSAGES' ],
+				botPermissions: [ 'SEND_MESSAGES' ]
 			},
 			run (client: Client, message: Message) {
 				message.channel.send(`Pong! ${client.ws.ping}ms`)
