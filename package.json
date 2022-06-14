@@ -8,7 +8,7 @@
     "start": "ts-node src/index.ts",
     "build":"tsc",
     "lint:fix": "eslint Src/ --fix --ext .ts",
-    "lint:err": " eslint Src/ --ext .ts"
+    "lint:err": "eslint Src/ --ext .ts"
   },
   "dependencies": {
     "discord.js": "^13.8.0",
