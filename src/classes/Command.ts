@@ -8,6 +8,7 @@ export abstract class Command {
       aliases?: string[];
       botPermissions?: PermissionString[];
       userPermissions?: PermissionString[];
+      devOnly?: boolean;
     };
     run: (client: Client, message: Message, args: string[]) => void;
   }) {
@@ -21,6 +22,7 @@ export abstract class Command {
     aliases?: string[];
     botPermissions?: PermissionString[];
     userPermissions?: PermissionString[];
+    devOnly?: boolean;
   }
 
 	run: (client: Client, message: Message, args: string[]) => void

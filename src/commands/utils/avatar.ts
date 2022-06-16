@@ -12,7 +12,8 @@ export default class Avatar extends Command {
 				name: 'avatar',
 				description: 'avatar of user',
 				aliases: ['av'],
-				botPermissions: [ 'SEND_MESSAGES', 'EMBED_LINKS' ]
+				botPermissions: [ 'SEND_MESSAGES', 'EMBED_LINKS' ],
+				devOnly: false
 			},
 			async run(client: Client, message: Message, args: string[]) {
 

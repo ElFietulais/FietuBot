@@ -6,17 +6,17 @@
   "author": "ElFietulais",
   "scripts": {
     "start": "ts-node src/index.ts",
-    "build":"tsc",
+    "build": "tsc",
     "lint:fix": "eslint src/ --fix --ext .ts",
     "lint:err": "eslint src/ --ext .ts"
   },
   "dependencies": {
     "discord.js": "^13.8.0",
     "dotenv": "^16.0.1",
-    "ts-node": "^10.8.1",
-    "yarn": "^1.22.19"
+    "ts-node": "^10.8.1"
   },
   "devDependencies": {
+    "yarn":"^1.22.19",
     "@typescript-eslint/eslint-plugin": "^5.27.1",
     "@typescript-eslint/parser": "^5.27.1",
     "eslint": "^8.2.0",
