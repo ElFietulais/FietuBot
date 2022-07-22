@@ -1,4 +1,4 @@
-import { Bot } from "./lib/structures/Client.js";
+import { Bot } from "#lib/structures";
 
 const main = async () => {
 	const client = new Bot();

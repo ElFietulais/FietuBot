@@ -26,7 +26,7 @@ replace `discord_bot_token` for your bot token
 
 ```js
 yarn install // installs the required dependencies
-yarn start // start the bot
 yarn build // compile
+yarn start // start the bot
 ```
 

@@ -1,4 +1,3 @@
-// import type { Client, Message } from 'discord.js'
 import { Command } from "#lib/structures";
 
 export default class Ping extends Command {
