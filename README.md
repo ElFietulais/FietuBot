@@ -8,7 +8,7 @@ A Discord bot using discord.js
 ```js
 NodeJs: 16.6.0 // or higher
 typescript: 4.7.3 // or higher
-discord.js: 13.8.0 // or higher
+discord.js: 14.0.3 // or higher
 yarn: 1.22.19 // or higher
 ```
 
