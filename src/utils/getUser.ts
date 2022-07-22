@@ -1,8 +1,19 @@
-import { Guild, GuildMember } from 'discord.js'
+import type { GuildMember, Message } from "discord.js";
 
-export function getUser(guild: Guild, username: string[]) {
-	const args = username.join('  ').toLowerCase() || username[0]?.toLowerCase()
+export async function getUser(message: Message, username: string[]) {
+	const mention = message.mentions.users.first();
+	if (mention) return mention;
+	const args = (username.join("  ") || username[0])?.toLowerCase();
+	const argsUser = (member: GuildMember) =>
+		(member.nickname || member.user.username).toLowerCase() || member.id;
 
-	const user = guild.members.cache.find((member: GuildMember) => member.nickname?.toLowerCase() == args || member.user.username.toLowerCase() == args || member.id == args)
-	return user?.user
+	const member = message.guild?.members.cache.find(
+		(member: GuildMember) => argsUser(member) === args
+	);
+
+	if (member) {
+		const fetch = await message.guild?.members.fetch(member.id);
+		if (fetch) return fetch.user;
+	}
+	return message.author;
 }

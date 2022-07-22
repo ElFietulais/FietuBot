@@ -1,3 +1,12 @@
-import { Bot } from './classes/Client'
+import { Bot } from "./lib/structures/Client.js";
 
-new Bot().start()
+const main = async () => {
+	const client = new Bot();
+	try {
+		await client.start();
+	} catch (err) {
+		console.log(err);
+	}
+};
+
+void main();

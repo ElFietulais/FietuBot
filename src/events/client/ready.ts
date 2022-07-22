@@ -1,13 +1,12 @@
-import type { Client } from 'discord.js'
-
-import { Events } from '../../classes/Event'
+import type { Client } from "discord.js";
+import { Events } from "../../lib/structures/Event.js";
 
 export default class Ready extends Events {
-	public constructor () {
+	public constructor() {
 		super({
-			async run (client: Client) {
-				console.log(`${client.user?.username} is online!`)
-			}
-		})
+			run(client: Client) {
+				console.log(`${client.user?.username} is online!`);
+			},
+		});
 	}
 }

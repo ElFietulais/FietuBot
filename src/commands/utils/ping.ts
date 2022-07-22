@@ -1,18 +1,20 @@
-import type { Client, Message } from 'discord.js'
-import { Command } from '../../classes/Command'
+// import type { Client, Message } from 'discord.js'
+import { Command } from "#lib/structures";
 
 export default class Ping extends Command {
-	public constructor () {
+	public constructor() {
 		super({
 			data: {
-				name: 'ping',
-				description: 'Pong!',
-				botPermissions: [ 'SEND_MESSAGES' ],
-				devOnly: false
+				name: "ping",
+				description: "Pong!",
+				botPermissions: ["SendMessages"],
+				devOnly: false,
 			},
-			run (client: Client, message: Message) {
-				message.channel.send(`Pong! ${client.ws.ping}ms`)
-			}
-		})
+			run: async ({ client, message }) => {
+				return message.channel.send(
+					`Pong! ${Math.round(client!.ws.ping)}ms`
+				);
+			},
+		});
 	}
 }
